@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Love Deannia ❤️</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #ffb6d5, #ffe5ef, #ffc8df);
+    color: #5b263b;
+}
+
+/* =========================
+   START SCREEN
+========================= */
+
+#startScreen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.questionBox {
+    background: rgba(255,255,255,0.8);
+    padding: 40px 25px;
+    border-radius: 35px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    max-width: 600px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.bigHeart {
+    font-size: 80px;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.questionBox h1 {
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.questionBox p {
+    font-size: 18px;
+}
+
+button {
+    border: none;
+    border-radius: 40px;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#yesButton {
+    background: #ff4f87;
+    color: white;
+    box-shadow: 0 8px 20px rgba(255,79,135,0.35);
+}
+
+#yesButton:hover {
+    transform: scale(1.1);
+}
+
+#noButton {
+    background: white;
+    color: #ff4f87;
+    position: relative;
+}
+
+/* =========================
+   SURPRISE
+========================= */
+
+#surprise {
+    display: none;
+    text-align: center;
+    padding: 40px 15px 100px;
+    animation: appear 2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 20px;
+}
+
+/* =========================
+   DUDU & BUBU
+========================= */
+
+.couple {
+    height: 220px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.bear,
+.bunny {
+    font-size: 110px;
+    position: relative;
+}
+
+.bear {
+    animation: bearMove 2s infinite alternate;
+}
+
+.bunny {
+    animation: bunnyMove 2s infinite alternate;
+}
+
+@keyframes bearMove {
+    from {
+        transform: translateX(-20px) rotate(-5deg);
+    }
+
+    to {
+        transform: translateX(15px) rotate(5deg);
+    }
+}
+
+@keyframes bunnyMove {
+    from {
+        transform: translateX(20px) rotate(5deg);
+    }
+
+    to {
+        transform: translateX(-15px) rotate(-5deg);
+    }
+}
+
+/* Kiss */
+
+.kiss {
+    position: absolute;
+    font-size: 45px;
+    animation: kiss 1.5s infinite;
+}
+
+@keyframes kiss {
+    0%,100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.letter {
+    max-width: 700px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.85);
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    text-align: left;
+}
+
+.letter h2 {
+    text-align: center;
+    color: #ff4f87;
+}
+
+#typing {
+    font-size: 18px;
+    line-height: 1.9;
+    white-space: pre-line;
+}
+
+/* =========================
+   PHOTO SLIDESHOW
+========================= */
+
+.slideshow {
+    max-width: 650px;
+    height: 400px;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    background: #fff;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: fade 1.5s;
+}
+
+.slide.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.memoryText {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+/* =========================
+   FINAL SCREEN
+========================= */
+
+#final {
+    display: none;
+    min-height: 100vh;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ff4f87, #ff9fc2, #ffcade);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 999;
+    animation: finalAppear 2s ease;
+}
+
+@keyframes finalAppear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#final h1 {
+    font-size: 65px;
+    color: white;
+    animation: finalHeart 1.2s infinite;
+}
+
+#final p {
+    color: white;
+    font-size: 24px;
+}
+
+@keyframes finalHeart {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* =========================
+   FALLING HEARTS
+========================= */
+
+.fallingHeart {
+    position: fixed;
+    top: -50px;
+    z-index: 1000;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.finalButton {
+    background: white;
+    color: #ff4f87;
+    margin-top: 20px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+    .questionBox h1 {
+        font-size: 28px;
+    }
+
+    .bigHeart {
+        font-size: 60px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .bear,
+    .bunny {
+        font-size: 80px;
+    }
+
+    .couple {
+        height: 180px;
+    }
+
+    .slideshow {
+        height: 300px;
+    }
+
+    #final h1 {
+        font-size: 45px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     QUESTION
+========================= -->
+
+<section id="startScreen">
+
+    <div class="questionBox">
+
+        <div class="bigHeart">❤️</div>
+
+        <h1>Will you stay with me forever? 🥺</h1>
+
+        <p>
+            I have a little surprise for you...
+        </p>
+
+        <p>
+            But first, abiyy have to answer honestly. 😳
+        </p>
+
+        <button id="yesButton" onclick="startSurprise()">
+            YES ❤️
+        </button>
+
+        <button id="noButton" onclick="runAway()">
+            NO 😭
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SURPRISE
+========================= -->
+
+<section id="surprise">
+
+    <h1 class="title">
+        YAYYYYY!!! 🥹❤️
+    </h1>
+
+    <p class="subtitle">
+        Thank you biy for choosing me!. 😭💕
+    </p>
+
+
+    <!-- DUDU & BUBU -->
+
+    <div class="couple">
+
+        <div class="bear">
+            🐻
+        </div>
+
+        <div class="kiss">
+            💋
+        </div>
+
+        <div class="bunny">
+            🐰
+        </div>
+
+    </div>
+
+    <h2>
+        Dudu & Bubu are kissing for us! 🥺💋
+    </h2>
+
+
+    <!-- LOVE LETTER -->
+
+    <div class="letter">
+
+        <h2>💌 A Letter For You</h2>
+
+        <div id="typing"></div>
+
+    </div>
+
+
+    <!-- PHOTOS -->
+
+    <h2>📸 Our Beautiful Memories</h2>
+
+    <div class="slideshow">
+
+        <!-- CHANGE THESE TO YOUR PHOTOS -->
+
+        <img src="photo1.jpg" class="slide active">
+
+        <img src="photo2.jpg" class="slide">
+
+        <img src="photo3.jpg" class="slide">
+
+        <img src="photo4.jpg" class="slide">
+
+        <img src="photo5.jpg" class="slide">
+
+    </div>
+
+    <p class="memoryText">
+        Every picture holds a memory I never want to forget. ❤️
+    </p>
+
+
+    <!-- MUSIC -->
+
+    <audio id="music" loop>
+
+        <source src="music.mp3" type="audio/mpeg">
+
+    </audio>
+
+
+    <button class="finalButton" onclick="showFinal()">
+        One More Thing... 💌
+    </button>
+
+
+</section>
+
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section id="final">
+
+    <div style="font-size:100px;">
+        ❤️
+    </div>
+
+    <h1>
+        I LOVE YOU ❤️
+    </h1>
+
+    <p>
+        Today, tomorrow, and every day after that. 🥺
+    </p>
+
+    <p>
+        Forever & always. 💕
+    </p>
+
+</section>
+
+
+
+<script>
+
+/* =========================
+   NO BUTTON RUNS AWAY
+========================= */
+
+function runAway() {
+
+    const button = document.getElementById("noButton");
+
+    button.style.position = "fixed";
+
+    const maxX = window.innerWidth - button.offsetWidth - 20;
+
+    const maxY = window.innerHeight - button.offsetHeight - 20;
+
+    const randomX = Math.random() * maxX;
+
+    const randomY = Math.random() * maxY;
+
+    button.style.left = randomX + "px";
+
+    button.style.top = randomY + "px";
+
+}
+
+
+/* =========================
+   START SURPRISE
+========================= */
+
+function startSurprise() {
+
+    document.getElementById("startScreen").style.display = "none";
+
+    document.getElementById("surprise").style.display = "block";
+
+    /* Start music */
+
+    const music = document.getElementById("music");
+
+    music.play().catch(function(error) {
+
+        console.log("Music could not autoplay:", error);
+
+    });
+
+
+    /* Start hearts */
+
+    setInterval(createHeart, 250);
+
+
+    /* Start typing */
+
+    typeLetter();
+
+}
+
+
+/* =========================
+   FALLING HEARTS
+========================= */
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "fallingHeart";
+
+    const hearts = [
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘",
+        "💝",
+        "💓",
+        "🥰"
+    ];
+
+    heart.innerHTML =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 30) + "px";
+
+    heart.style.animationDuration =
+        (3 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+
+        heart.remove();
+
+    }, 8000);
+
+}
+
+
+/* =========================
+   TYPING LOVE LETTER
+========================= */
+
+const loveLetter = `My love Joy,
+
+If you're reading this, it means you said YES... and honestly, you just made my heart so happy. 🥺❤️
+
+I want you to know that you are one of the most beautiful parts of my life.
+
+Your smile can make my worst days feel better.
+
+Your presence makes ordinary moments feel special.
+
+And every memory we make together is something I want to keep forever.
+
+I don't promise that everything will always be perfect.
+
+But I promise that I will always try.
+
+I will try to make you smile.
+
+I will try to understand you.
+
+I will stay beside you through the good days and the difficult ones.
+
+I want more silly conversations.
+
+More late-night talks.
+
+More random pictures.
+
+More laughter.
+
+More memories.
+
+More days where we look at each other and think...
+
+"How did I get so lucky to having you?" 🥺❤️
+
+Thank you for being part of my life.
+
+Thank you for every smile.
+
+Thank you for every memory.
+
+And most importantly...
+
+Thank you for choosing me.
+
+I love you more than these words can explain.
+
+Forever yours. ❤️`;
+
+let letterIndex = 0;
+
+function typeLetter() {
+
+    if (letterIndex < loveLetter.length) {
+
+        document.getElementById("typing").innerHTML +=
+            loveLetter.charAt(letterIndex);
+
+        letterIndex++;
+
+        setTimeout(typeLetter, 35);
+
+    }
+
+}
+
+
+/* =========================
+   PHOTO SLIDESHOW
+========================= */
+
+let slideIndex = 0;
+
+function changeSlide() {
+
+    const slides =
+        document.querySelectorAll(".slide");
+
+    slides.forEach(function(slide) {
+
+        slide.classList.remove("active");
+
+    });
+
+    slideIndex++;
+
+    if (slideIndex >= slides.length) {
+
+        slideIndex = 0;
+
+    }
+
+    slides[slideIndex].classList.add("active");
+
+}
+
+
+/* Change photo every 3 seconds */
+
+setInterval(changeSlide, 3000);
+
+
+/* =========================
+   FINAL SCREEN
+========================= */
+
+function showFinal() {
+
+    document.getElementById("final").style.display = "flex";
+
+    /* Extra hearts */
+
+    for (let i = 0; i < 30; i++) {
+
+        setTimeout(function() {
+
+            createHeart();
+
+        }, i * 100);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
