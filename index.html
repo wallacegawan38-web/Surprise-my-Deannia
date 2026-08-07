@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For My Love Deannia ❤️</title>
+<title>For My Love ❤️</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -21,9 +20,7 @@ body {
     color: #5b263b;
 }
 
-/* =========================
-   START SCREEN
-========================= */
+/* START SCREEN */
 
 #startScreen {
     min-height: 100vh;
@@ -50,13 +47,8 @@ body {
 }
 
 @keyframes heartbeat {
-    0%,100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
 }
 
 .questionBox h1 {
@@ -94,9 +86,7 @@ button {
     position: relative;
 }
 
-/* =========================
-   SURPRISE
-========================= */
+/* SURPRISE */
 
 #surprise {
     display: none;
@@ -110,7 +100,6 @@ button {
         opacity: 0;
         transform: translateY(40px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -126,76 +115,18 @@ button {
     font-size: 20px;
 }
 
-/* =========================
-   DUDU & BUBU
-========================= */
+/* DUDU & BUBU VIDEO */
 
-.couple {
-    height: 220px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto;
+.duduBubu {
+    max-width: 700px;
+    width: 100%;
+    margin: 30px auto;
+    border-radius: 30px;
+    display: block;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
-.bear,
-.bunny {
-    font-size: 110px;
-    position: relative;
-}
-
-.bear {
-    animation: bearMove 2s infinite alternate;
-}
-
-.bunny {
-    animation: bunnyMove 2s infinite alternate;
-}
-
-@keyframes bearMove {
-    from {
-        transform: translateX(-20px) rotate(-5deg);
-    }
-
-    to {
-        transform: translateX(15px) rotate(5deg);
-    }
-}
-
-@keyframes bunnyMove {
-    from {
-        transform: translateX(20px) rotate(5deg);
-    }
-
-    to {
-        transform: translateX(-15px) rotate(-5deg);
-    }
-}
-
-/* Kiss */
-
-.kiss {
-    position: absolute;
-    font-size: 45px;
-    animation: kiss 1.5s infinite;
-}
-
-@keyframes kiss {
-    0%,100% {
-        transform: scale(0.8);
-        opacity: 0.5;
-    }
-
-    50% {
-        transform: scale(1.4);
-        opacity: 1;
-    }
-}
-
-/* =========================
-   LOVE LETTER
-========================= */
+/* LOVE LETTER */
 
 .letter {
     max-width: 700px;
@@ -218,9 +149,7 @@ button {
     white-space: pre-line;
 }
 
-/* =========================
-   PHOTO SLIDESHOW
-========================= */
+/* PHOTO SLIDESHOW */
 
 .slideshow {
     max-width: 650px;
@@ -250,7 +179,6 @@ button {
         opacity: 0;
         transform: scale(1.05);
     }
-
     to {
         opacity: 1;
         transform: scale(1);
@@ -262,9 +190,26 @@ button {
     margin-top: 15px;
 }
 
-/* =========================
-   FINAL SCREEN
-========================= */
+/* MUSIC */
+
+.musicBox {
+    margin: 35px auto;
+    max-width: 500px;
+    background: rgba(255,255,255,0.8);
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.musicBox p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+audio {
+    width: 100%;
+}
+
+/* FINAL SCREEN */
 
 #final {
     display: none;
@@ -281,13 +226,8 @@ button {
 }
 
 @keyframes finalAppear {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 #final h1 {
@@ -302,18 +242,11 @@ button {
 }
 
 @keyframes finalHeart {
-    0%,100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.15);
-    }
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
 }
 
-/* =========================
-   FALLING HEARTS
-========================= */
+/* FALLING HEARTS */
 
 .fallingHeart {
     position: fixed;
@@ -328,16 +261,11 @@ button {
         transform: translateY(0) rotate(0deg);
         opacity: 1;
     }
-
     to {
         transform: translateY(110vh) rotate(360deg);
         opacity: 0;
     }
 }
-
-/* =========================
-   BUTTON
-========================= */
 
 .finalButton {
     background: white;
@@ -345,9 +273,7 @@ button {
     margin-top: 20px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:600px) {
 
@@ -363,15 +289,6 @@ button {
         font-size: 32px;
     }
 
-    .bear,
-    .bunny {
-        font-size: 80px;
-    }
-
-    .couple {
-        height: 180px;
-    }
-
     .slideshow {
         height: 300px;
     }
@@ -379,15 +296,11 @@ button {
     #final h1 {
         font-size: 45px;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
-
 
 <!-- =========================
      QUESTION
@@ -406,7 +319,7 @@ button {
         </p>
 
         <p>
-            But first, abiyy have to answer honestly. 😳
+            But first, you have to answer honestly. 😳
         </p>
 
         <button id="yesButton" onclick="startSurprise()">
@@ -422,37 +335,66 @@ button {
 </section>
 
 
-
 <!-- =========================
      SURPRISE
 ========================= -->
 
-< ="surprise">
+<section id="surprise">
 
     <h1 class="title">
         YAYYYYY!!! 🥹❤️
     </h1>
 
     <p class="subtitle">
-        Thank you biy for choosing me!. 😭💕
+        I knew you would choose me. 😭💕
     </p>
 
 
-    <!-- DUDU & BUBU -->
-<div class="couple">
+    <!-- =========================
+         REAL DUDU & BUBU VIDEO
+    ========================= -->
 
-    <img src="dudu-bubu.mp4"
-         alt="Dudu and Bubu kissing"
-         class="duduBubu">
+    <video
+        class="duduBubu"
+        id="duduBubuVideo"
+        autoplay
+        loop
+        muted
+        playsinline>
 
-</div>
+        <source src="dudu-bubu.mp4" type="video/mp4">
 
-<h2>
-    Dudu & Bubu are kissing for us! 🥺💋
-</h2>
+        Your browser does not support video.
+
+    </video>
+
+    <h2>
+        Dudu & Bubu are kissing for us! 🥺❤️
+    </h2>
 
 
-    <!-- LOVE LETTER -->
+    <!-- =========================
+         MUSIC
+    ========================= -->
+
+    <div class="musicBox">
+
+        <p>🎵 A little song for you ❤️</p>
+
+        <audio id="music" controls loop>
+
+            <source src="music.mp3" type="audio/mpeg">
+
+            Your browser does not support audio.
+
+        </audio>
+
+    </div>
+
+
+    <!-- =========================
+         LOVE LETTER
+    ========================= -->
 
     <div class="letter">
 
@@ -463,54 +405,34 @@ button {
     </div>
 
 
-    <!-- PHOTOS -->
+    <!-- =========================
+         PHOTOS
+    ========================= -->
 
-    <h2>📸 My favourite moment with you</h2>
+    <h2>📸 Our Beautiful Memories</h2>
 
     <div class="slideshow">
 
-    <div class="slide active">
-        <img src="photo1.jpeg">
-        <p>Our first beautiful pictures together ❤️</p>
+        <img src="photo1.jpeg" class="slide active">
+
+        <img src="photo2.jpeg" class="slide">
+
+        <img src="photo3.jpeg" class="slide">
+
+        <img src="photo4.jpeg" class="slide">
+
     </div>
 
-    <div class="slide">
-        <img src="photo2.jpeg">
-        <p>i love watching you dancing 🥺💕</p>
-    </div>
-
-    <div class="slide">
-        <img src="photo3.jpeg">
-        <p>our first spend time together❤️</p>
-    </div>
-
-     <div class="slide">
-        <img src="photo4.jpeg">
-        <p>even we far i still love you no matter how 💕</p>
-    </div>  
-        
-</div>
     <p class="memoryText">
         Every picture holds a memory I never want to forget. ❤️
     </p>
-
-
-    <!-- MUSIC -->
-
-    <audio id="music" loop>
-
-        <source src="music.mp3" type="audio/mpeg">
-
-    </audio>
 
 
     <button class="finalButton" onclick="showFinal()">
         One More Thing... 💌
     </button>
 
-
 </section>
-
 
 
 <!-- =========================
@@ -538,7 +460,6 @@ button {
 </section>
 
 
-
 <script>
 
 /* =========================
@@ -551,18 +472,21 @@ function runAway() {
 
     button.style.position = "fixed";
 
-    const maxX = window.innerWidth - button.offsetWidth - 20;
+    const maxX =
+        window.innerWidth - button.offsetWidth - 20;
 
-    const maxY = window.innerHeight - button.offsetHeight - 20;
+    const maxY =
+        window.innerHeight - button.offsetHeight - 20;
 
-    const randomX = Math.random() * maxX;
+    const randomX =
+        Math.random() * maxX;
 
-    const randomY = Math.random() * maxY;
+    const randomY =
+        Math.random() * maxY;
 
     button.style.left = randomX + "px";
 
     button.style.top = randomY + "px";
-
 }
 
 
@@ -576,18 +500,38 @@ function startSurprise() {
 
     document.getElementById("surprise").style.display = "block";
 
+
     /* Start music */
 
-    const music = document.getElementById("music");
+    const music =
+        document.getElementById("music");
 
     music.play().catch(function(error) {
 
-        console.log("Music could not autoplay:", error);
+        console.log(
+            "Music could not autoplay:",
+            error
+        );
 
     });
 
 
-    /* Start hearts */
+    /* Play Dudu & Bubu video */
+
+    const video =
+        document.getElementById("duduBubuVideo");
+
+    video.play().catch(function(error) {
+
+        console.log(
+            "Video could not autoplay:",
+            error
+        );
+
+    });
+
+
+    /* Start falling hearts */
 
     setInterval(createHeart, 250);
 
@@ -595,7 +539,6 @@ function startSurprise() {
     /* Start typing */
 
     typeLetter();
-
 }
 
 
@@ -605,9 +548,11 @@ function startSurprise() {
 
 function createHeart() {
 
-    const heart = document.createElement("div");
+    const heart =
+        document.createElement("div");
 
-    heart.className = "fallingHeart";
+    heart.className =
+        "fallingHeart";
 
     const hearts = [
         "❤️",
@@ -621,7 +566,11 @@ function createHeart() {
     ];
 
     heart.innerHTML =
-        hearts[Math.floor(Math.random() * hearts.length)];
+        hearts[
+            Math.floor(
+                Math.random() * hearts.length
+            )
+        ];
 
     heart.style.left =
         Math.random() * 100 + "vw";
@@ -639,7 +588,6 @@ function createHeart() {
         heart.remove();
 
     }, 8000);
-
 }
 
 
@@ -647,7 +595,7 @@ function createHeart() {
    TYPING LOVE LETTER
 ========================= */
 
-const loveLetter = `My love Joy,
+const loveLetter = `My love,
 
 If you're reading this, it means you said YES... and honestly, you just made my heart so happy. 🥺❤️
 
@@ -681,7 +629,7 @@ More memories.
 
 More days where we look at each other and think...
 
-"How did I get so lucky to having you?" 🥺❤️
+"How did I get so lucky?" 🥺❤️
 
 Thank you for being part of my life.
 
@@ -709,9 +657,7 @@ function typeLetter() {
         letterIndex++;
 
         setTimeout(typeLetter, 35);
-
     }
-
 }
 
 
@@ -741,7 +687,6 @@ function changeSlide() {
     }
 
     slides[slideIndex].classList.add("active");
-
 }
 
 
@@ -758,6 +703,7 @@ function showFinal() {
 
     document.getElementById("final").style.display = "flex";
 
+
     /* Extra hearts */
 
     for (let i = 0; i < 30; i++) {
@@ -769,7 +715,6 @@ function showFinal() {
         }, i * 100);
 
     }
-
 }
 
 </script>
